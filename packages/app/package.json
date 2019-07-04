@@ -5,10 +5,11 @@
   "dependencies": {
     "hoist-non-react-statics": "^3.0.1",
     "react": "16.8.6",
-    "react-native": "0.59.5",
+    "react-native": "0.60.0",
     "react-navigation": "3.9.1",
     "react-relay": "^4.0.0",
-    "styled-components": "^4.2.0"
+    "styled-components": "^4.2.0",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -55,6 +56,9 @@
     "relay": "relay-compiler --watchman false --src ./src --schema data/schema.graphql --language typescript",
     "relay:watch": "yarn relay -- --watch",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  }
+    "test": "jest",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
