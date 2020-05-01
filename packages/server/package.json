@@ -29,7 +29,8 @@
     "mongoose": "^5.5.4",
     "pretty-error": "^2.1.1",
     "subscriptions-transport-ws": "^0.9.14",
-    "winston": "^3.0.0"
+    "winston": "^3.0.0",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
@@ -111,6 +112,9 @@
     "test": "jest",
     "test:watch": "jest --watch --coverage",
     "typecheck": "tsc",
-    "update-schema": "babel-node --extensions \".es6,.js,.es,.jsx,.mjs,.ts\" ./scripts/updateSchema.js"
-  }
+    "update-schema": "babel-node --extensions \".es6,.js,.es,.jsx,.mjs,.ts\" ./scripts/updateSchema.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
+  },
+  "snyk": true
 }
